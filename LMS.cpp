@@ -81,7 +81,7 @@ class Teacher
     string Father_name;
 public:
     string Teach_name;
-    void Student_Detail(){
+    void teacher_Detail(){
         string Teach_name,Mother_name, father_name, address;
         int rollno, contactNo;
         cout<<"-------------------------------------------------------------"<<endl;
