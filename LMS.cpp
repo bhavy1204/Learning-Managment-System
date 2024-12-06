@@ -120,15 +120,43 @@ int main()
     int choice;
     
     do{
+        cout<<"------------------------------------------------------"<<endl;
         cout<<"1. students "<<endl;
         cout<<"2. teachers "<<endl;
         cout<<"3. courses "<<endl;
-        cout<<"4. Quit\n>>>";
+        cout<<"4. Quit\n>> ";
         cin>>choice;
         switch (choice)
         {
         case 1:
-            /* students menu */
+            int sub_choice;
+            do
+            {
+                cout<<"----------------------------------------------------"<<endl;
+                cout<<"1.View student detail "<<endl;
+                cout<<"2.View all student details "<<endl;
+                cout<<"3.Add student(s)"<<endl;
+                cout<<"4.Update student detail "<<endl;
+                cout<<"5. Go back \n>> ";
+                cin>>sub_choice;
+                cout<<"----------------------------------------------------"<<endl;
+            } while (sub_choice != 5); 
+            switch (sub_choice)
+            {
+            case 1:
+                int rn;
+                cout<<"Enter roll no :- ";
+                cin>>rn;
+                if (s[])
+                {
+                    /* code */
+                }
+                
+                break;
+            
+            default:
+                break;
+            }
             break;
         case 2:
             /* teachers menu */
