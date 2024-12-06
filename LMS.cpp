@@ -140,23 +140,29 @@ int main()
                 cout<<"5. Go back \n>> ";
                 cin>>sub_choice;
                 cout<<"----------------------------------------------------"<<endl;
-            } while (sub_choice != 5); 
-            switch (sub_choice)
+                            switch (sub_choice)
             {
             case 1:
                 int rn;
                 cout<<"Enter roll no :- ";
                 cin>>rn;
-                if (s[])
+                for ( i = 0; i < MAX; i++)
                 {
-                    /* code */
+                    if (s[i].rollno==rn)
+                        s[i].show_student_detail();
+                    else
+                        cout<<"NOT FOUND IN RECORD"<<endl;
+                    
                 }
-                
                 break;
-            
+            case 3:
+                s[++top].Student_Detail();
+                break;
+
             default:
                 break;
             }
+            } while (sub_choice != 5); 
             break;
         case 2:
             /* teachers menu */
