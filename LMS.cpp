@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include <string>
 #define MAX 5
 using namespace std;
@@ -38,7 +39,7 @@ public:
 // class student
 class Student
 {
-    int contactNo;
+    long long int contactNo;
     string address;
     string Mother_name;
     string Father_name;
@@ -51,24 +52,21 @@ public:
         string Stu_name, Mother_name, father_name, address;
         int rollno, contactNo;
         cout << "-------------------------------------------------------------" << endl;
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter student Name : ";
-        getline(cin, Stu_name);
-        cin.ignore();
+        cin>>Stu_name;
         cout << "Enter Student Roll no : ";
         cin >> rollno;
-        cin.ignore();
         cout << "Enter student contact : ";
         cin >> contactNo;
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Fathers name : ";
-        cin.ignore();
         getline(cin, Father_name);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Mothers name : ";
-        cin.ignore();
         getline(cin, Mother_name);
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Address : ";
-        cin.ignore();
         getline(cin, address);
         cout << "-------------------------------------------------------------" << endl;
     }
@@ -88,7 +86,7 @@ public:
 class Teacher
 {
     int id;
-    int contactNo;
+    long long int contactNo;
     string address;
     string Mother_name;
     string Father_name;
@@ -98,8 +96,9 @@ public:
     void teacher_Detail()
     {
         string Teach_name, Mother_name, father_name, address;
-        int rollno, contactNo;
-        cout << "-------------------------------------------------------------" << endl;
+        int rollno;
+        long long int contactNo;
+        cout << "----------------------------------------------------------" << endl;
         cout << "Enter Teacher Name : ";
         getline(cin, Teach_name);
         cout << "Enter ID : ";
@@ -112,18 +111,18 @@ public:
         getline(cin, Mother_name);
         cout << "Enter Address : ";
         getline(cin, address);
-        cout << "-------------------------------------------------------------" << endl;
+        cout << "---------------------------------------------------------" << endl;
     }
     void show_teacher_detail()
     {
-        cout << "--------------------------------------------------------------" << endl;
+        cout << "----------------------------------------------------------" << endl;
         cout << "Name : " << Teach_name;
         cout << "Name : " << id;
         cout << "Conatct : " << contactNo;
         cout << "Mother Name : " << Mother_name;
         cout << "Father Name : " << Father_name;
         cout << "Address : " << address;
-        cout << "--------------------------------------------------------------" << endl;
+        cout << "----------------------------------------------------------" << endl;
     }
 };
 int main()
@@ -168,7 +167,8 @@ int main()
                     bool found=false;
                     for (i = 0; i < MAX; i++)
                     {
-                        if (s[i].rollno == rn){
+                        if (s[0].rollno == rn){
+                            cout<<"All ok"<<endl;
                             s[i].show_student_detail();
                             found=true;
                         }
@@ -178,6 +178,13 @@ int main()
                     }
                     break;
                 }
+                case 2:
+                for (int i = 0; i < 3; i++)
+                {
+                    s->show_student_detail();
+                }
+                
+                break;
                 case 3:
                 cin.ignore();
                     if (top + 1 < MAX)
