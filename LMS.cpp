@@ -49,10 +49,7 @@ public:
     int rollno;
     void Student_Detail()
     {
-        string Stu_name, Mother_name, father_name, address;
-        int rollno, contactNo;
-        cout << "-------------------------------------------------------------" << endl;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        cout << "----------------------------------------------------------" << endl;
         cout << "Enter student Name : ";
         cin>>Stu_name;
         cout << "Enter Student Roll no : ";
@@ -68,18 +65,18 @@ public:
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Address : ";
         getline(cin, address);
-        cout << "-------------------------------------------------------------" << endl;
+        cout << "--------------------------------------------------------" << endl;
     }
     void show_student_detail()
     {
-        cout << "--------------------------------------------------------------" << endl;
-        cout << "Name : " << Stu_name;
-        cout << "Name : " << rollno;
-        cout << "Conatct : " << contactNo;
-        cout << "Mother Name : " << Mother_name;
-        cout << "Father Name : " << Father_name;
-        cout << "Address : " << address;
-        cout << "--------------------------------------------------------------" << endl;
+        cout << "---------------------------------------------------------" << endl;
+        cout << "\nName : " << Stu_name;
+        cout << "\nName : " << rollno;
+        cout << "\nConatct : " << contactNo;
+        cout << "\nMother Name : " << Mother_name;
+        cout << "\nFather Name : " << Father_name;
+        cout << "\nAddress : " << address;
+        cout << "\n--------------------------------------------------------" << endl;
     }
 };
 // Class Teacher
@@ -142,22 +139,20 @@ int main()
         cout << "3. courses " << endl;
         cout << "4. Quit\n>> ";
         cin >> choice;
-        cin.ignore();
         switch (choice)
         {
         case 1:
             int sub_choice;
             do
             {
-                cout << "----------------------------------------------------" << endl;
+                cout << "--------------------------------------------------" << endl;
                 cout << "1.View student detail " << endl;
                 cout << "2.View all student details " << endl;
                 cout << "3.Add student(s)" << endl;
                 cout << "4.Update student detail " << endl;
                 cout << "5. Go back \n>> ";
                 cin >> sub_choice;
-                cin.ignore();
-                cout << "----------------------------------------------------" << endl;
+                cout << "--------------------------------------------------" << endl;
                 switch (sub_choice)
                 {
                 case 1:{
@@ -167,8 +162,7 @@ int main()
                     bool found=false;
                     for (i = 0; i < MAX; i++)
                     {
-                        if (s[0].rollno == rn){
-                            cout<<"All ok"<<endl;
+                        if (s[i].rollno == rn){
                             s[i].show_student_detail();
                             found=true;
                         }
