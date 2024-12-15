@@ -192,6 +192,7 @@ int main()
                     cout << "Enter roll no :- ";
                     cin >> rn;
                     bool found=false;
+                    cin.ignore();
                     for (i = 0; i <= studentTop; i++){
                         if (s[i].rollno == rn){
                             s[i].Student_Detail();
