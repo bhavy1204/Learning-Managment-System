@@ -47,11 +47,13 @@ class Student
 public:
     string Stu_name;
     int rollno;
+    //TO get student details and update them
     void Student_Detail()
     {
         cout << "----------------------------------------------------------" << endl;
         cout << "Enter student Name : ";
-        cin>>Stu_name;
+        //cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        getline(cin, Stu_name);
         cout << "Enter Student Roll no : ";
         cin >> rollno;
         cout << "Enter student contact : ";
@@ -59,22 +61,21 @@ public:
         cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Fathers name : ";
         getline(cin, Father_name);
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Mothers name : ";
-        getline(cin, Mother_name);
-        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
+        getline(cin, Mother_name); 
         cout << "Enter Address : ";
         getline(cin, address);
         cout << "--------------------------------------------------------" << endl;
     }
+    //to show student detail
     void show_student_detail()
     {
         cout << "---------------------------------------------------------" << endl;
         cout << "\nName : " << Stu_name;
         cout << "\nName : " << rollno;
         cout << "\nConatct : " << contactNo;
-        cout << "\nMother Name : " << Mother_name;
         cout << "\nFather Name : " << Father_name;
+        cout << "\nMother Name : " << Mother_name;
         cout << "\nAddress : " << address;
         cout << "\n--------------------------------------------------------" << endl;
     }
@@ -84,7 +85,7 @@ class Teacher
 {
     int id;
     long long int contactNo;
-    string address;
+    string address; 
     string Mother_name;
     string Father_name;
 
@@ -126,7 +127,7 @@ int main()
 {
     system("cls");
     bool done = false;
-    int top = -1;
+    int studentTop = -1;
     Student s[MAX];
     Teacher t1;
     int choice;
@@ -142,6 +143,7 @@ int main()
         switch (choice)
         {
         case 1:
+            //Menu for operation on students
             int sub_choice;
             do
             {
@@ -155,47 +157,58 @@ int main()
                 cout << "--------------------------------------------------" << endl;
                 switch (sub_choice)
                 {
-                case 1:{
+                case 1:
+                {
                     int rn;
                     cout << "Enter roll no :- ";
                     cin >> rn;
                     bool found=false;
-                    for (i = 0; i < MAX; i++)
-                    {
+                    for (i = 0; i < MAX; i++){
                         if (s[i].rollno == rn){
                             s[i].show_student_detail();
                             found=true;
                         }
                     }
-                    if(found==false){
+                    if(found==false)
                         cout << "NOT FOUND IN RECORD" << endl;
-                    }
                     break;
                 }
                 case 2:
-                for (int i = 0; i < 3; i++)
+                for(int i = 0; i <= studentTop; i++)
                 {
                     s->show_student_detail();
-                }
-                
+                } 
                 break;
                 case 3:
                 cin.ignore();
-                    if (top + 1 < MAX)
-                    {
-                        s[++top].Student_Detail();
-                    }
-                    else
-                    {
-                        cout << "Student capacity reached! Cannot add more students." << endl;
+                    if (studentTop + 1 < MAX)
+                        s[++studentTop].Student_Detail();
+                    else{
+                        cout << "Batch capacity reached! Cannot add more students." << endl;
                     }
                     break;
-
+                case 4:{
+                    int rn;
+                    cout << "Enter roll no :- ";
+                    cin >> rn;
+                    bool found=false;
+                    for (i = 0; i <= studentTop; i++){
+                        if (s[i].rollno == rn){
+                            s[i].Student_Detail();
+                            cout<<" Updated succesfully "<<endl;
+                            found=true;
+                        }
+                    }
+                    if(found==false)
+                        cout << "NOT FOUND IN RECORD" << endl;
+                    break;
+                }
                 default:
                     break;
                 }
             } while (sub_choice != 5);
             break;
+            
         case 2:
             /* teachers menu */
             break;
