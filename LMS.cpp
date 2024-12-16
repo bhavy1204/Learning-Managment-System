@@ -50,7 +50,7 @@ public:
     //TO get student details and update them
     void Student_Detail()
     {
-        cout << "----------------------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
         cout << "Enter student Name : ";
         //cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         getline(cin, Stu_name);
@@ -65,7 +65,7 @@ public:
         getline(cin, Mother_name); 
         cout << "Enter Address : ";
         getline(cin, address);
-        cout << "--------------------------------------------------------" << endl;
+        cout << "---------------------------------------------------" << endl;
     }
     //to show student detail
     void show_student_detail()
@@ -91,18 +91,17 @@ class Teacher
 
 public:
     string Teach_name;
+    int top=-1;
     void teacher_Detail()
     {
-        string Teach_name, Mother_name, father_name, address;
-        int rollno;
-        long long int contactNo;
-        cout << "----------------------------------------------------------" << endl;
+        cout << "------------------------------------------------------" << endl;
         cout << "Enter Teacher Name : ";
         getline(cin, Teach_name);
         cout << "Enter ID : ";
         cin >> id;
         cout << "Enter teacher contact : ";
         cin >> contactNo;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
         cout << "Enter Fathers name : ";
         getline(cin, Father_name);
         cout << "Enter Mothers name : ";
@@ -147,14 +146,14 @@ int main()
             int sub_choice;
             do
             {
-                cout << "--------------------------------------------------" << endl;
+                cout << "---------------------------------------------" << endl;
                 cout << "1.View student detail " << endl;
                 cout << "2.View all student details " << endl;
                 cout << "3.Add student(s)" << endl;
                 cout << "4.Update student detail " << endl;
                 cout << "5. Go back \n>> ";
                 cin >> sub_choice;
-                cout << "--------------------------------------------------" << endl;
+                cout << "--------------------------------------------" << endl;
                 switch (sub_choice)
                 {
                 case 1:
@@ -211,7 +210,28 @@ int main()
             break;
             
         case 2:
-            /* teachers menu */
+            do
+            {
+                cout << "--------------------------------------------------" << endl;
+                cout << "1.Search teacher " << endl;
+                cout << "2.View all teachers details " << endl;
+                cout << "3.Add new teacher" << endl;
+                cout << "4.Update teacher details " << endl;
+                cout << "5. Go back \n>> ";
+                cin >> sub_choice;
+                cout << "--------------------------------------------------" << endl;
+                switch (sub_choice)
+                {
+                case 1:
+                    
+                    break;
+                case 3:
+                
+                    break;
+                default:
+                    break;
+                }
+            }while(sub_choice!=5);
             break;
         case 3:
             /* courses menu */
