@@ -91,9 +91,9 @@ class Teacher
 public:
     int id;
     string Teach_name;
-    int top = -1;
     void teacher_Detail()
     {
+        cin.ignore();
         cout << "------------------------------------------------------" << endl;
         cout << "Enter Teacher Name : ";
         getline(cin, Teach_name);
@@ -108,27 +108,27 @@ public:
         getline(cin, Mother_name);
         cout << "Enter Address : ";
         getline(cin, address);
-        cout << "---------------------------------------------------------" << endl;
+        cout << "------------------------------------------------------" << endl;
     }
     void show_teacher_detail()
     {
         cout << "----------------------------------------------------------" << endl;
-        cout << "Name : " << Teach_name;
-        cout << "Name : " << id;
-        cout << "Conatct : " << contactNo;
-        cout << "Mother Name : " << Mother_name;
-        cout << "Father Name : " << Father_name;
-        cout << "Address : " << address;
-        cout << "----------------------------------------------------------" << endl;
+        cout << "\nName : " << Teach_name;
+        cout << "\nName : " << id;
+        cout << "\nConatct : " << contactNo;
+        cout << "\nMother Name : " << Mother_name;
+        cout << "\nFather Name : " << Father_name;
+        cout << "\nAddress : " << address;
+        cout << "\n----------------------------------------------------------" << endl;
     }
 };
 int main()
 {
     system("cls");
     bool done = false;
-    int studentTop = -1;
+    int studentTop = -1,teacherTop=-1;
     Student s[MAX];
-    Teacher t1;
+    Teacher t1[MAX];
     int choice;
 
     do
@@ -216,7 +216,6 @@ int main()
             break;
 
         case 2:
-            int sub_choice;
             do
             {
                 // Menu for operation on teachers
@@ -232,22 +231,30 @@ int main()
                 {
                 case 1:
                 {
-                    if (t1.top == -1)
+                    if (teacherTop == -1)
                         cout << "NO teacher to show " << endl;
                     int id;
                     cout << "Enter teacher id : ";
                     cin >> id;
-                    for (i = 0; i < t1.top; i++)
+                    for (i = 0; i <= teacherTop; i++)
                     {
-                        if (id == t1.id)
-                            t1.show_teacher_detail();
+                        if (id == t1[i].id)
+                            t1[i].show_teacher_detail();
                     }
                     break;
                 }
+                case 2:
+                    if (teacherTop==-1)
+                        cout<<"No teacher to show "<<endl;
+                    else
+                        for (i = 0; i <= teacherTop; i++)
+                            t1[i].show_teacher_detail();
+                    break;
                 case 3:
-                    if(t1.top==MAX-1)
+                    if(teacherTop==MAX-1)
                         cout<<"Memory full"<<endl;
-                    
+                    else
+                        t1[++teacherTop].teacher_Detail();
                     break;
                 default:
                     break;
