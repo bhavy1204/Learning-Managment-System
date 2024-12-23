@@ -126,6 +126,7 @@ int main()
 {
     system("cls");
     bool done = false;
+    bool found =false;
     int studentTop = -1, teacherTop = -1;
     Student s[MAX];
     Teacher t1[MAX];
@@ -163,7 +164,7 @@ int main()
                     int rn;
                     cout << "Enter roll no :- ";
                     cin >> rn;
-                    bool found = false;
+                    found = false;
                     for (i = 0; i < MAX; i++)
                     {
                         if (s[i].rollno == rn)
@@ -191,7 +192,7 @@ int main()
                     int rn;
                     cout << "Enter roll no :- ";
                     cin >> rn;
-                    bool found = false;
+                    found = false;
                     cin.ignore();
                     for (i = 0; i <= studentTop; i++)
                     {
@@ -207,10 +208,10 @@ int main()
                     break;
                 }
                 case 5:
-                    int rn;
+                    // int rn;
                     cout << "Enter roll no :- ";
                     cin >> rn;
-                    bool found = false;
+                    found = false;
                     for (i = 0; i < MAX; i++)
                     {
                         if (s[i].rollno == rn)
