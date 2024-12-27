@@ -5,7 +5,7 @@
 using namespace std;
 
 int i;
-// courses
+// courses class
 class courses
 {
 public:
@@ -13,6 +13,7 @@ public:
     string name;
     int max_marks;
     int duration;
+    //Adding new courses and update them
     void add_course()
     {
         cout << "-------------------------------------------------------" << endl;
@@ -26,6 +27,7 @@ public:
         cin >> duration;
         cout << "---------------------------------------------------------" << endl;
     }
+    //View course details 
     void course_detail()
     {
         cout << "-------------------------------------------------------" << endl;
@@ -43,7 +45,6 @@ class Student
     string address;
     string Mother_name;
     string Father_name;
-
 public:
     string Stu_name;
     int rollno;
@@ -52,6 +53,7 @@ public:
     {
         cout << "---------------------------------------------------" << endl;
         cout << "Enter student Name : ";
+        //to clear input buffer
         // cin.ignore(numeric_limits<streamsize>::max(), '\n');
         getline(cin, Stu_name);
         cout << "Enter Student Roll no : ";
@@ -67,7 +69,7 @@ public:
         getline(cin, address);
         cout << "---------------------------------------------------" << endl;
     }
-    // to show student detail
+    // To View student detail
     void show_student_detail()
     {
         cout << "---------------------------------------------------------" << endl;
