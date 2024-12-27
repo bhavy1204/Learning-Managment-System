@@ -4,6 +4,24 @@
 #define MAX 5
 using namespace std;
 
+bool validUserInput()
+{
+    while (true)
+    {
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(),'\n');
+            cout<<"Please enter valid input \n";
+        }
+        else
+        {
+            break;
+            return true;
+        }  
+    }
+}
+
 int i;
 // courses class
 class courses
@@ -13,7 +31,7 @@ public:
     string name;
     int max_marks;
     int duration;
-    //Adding new courses and update them
+    // Adding new courses and update them
     void add_course()
     {
         cout << "-------------------------------------------------------" << endl;
@@ -27,7 +45,7 @@ public:
         cin >> duration;
         cout << "---------------------------------------------------------" << endl;
     }
-    //View course details 
+    // View course details
     void course_detail()
     {
         cout << "-------------------------------------------------------" << endl;
@@ -45,6 +63,7 @@ class Student
     string address;
     string Mother_name;
     string Father_name;
+
 public:
     string Stu_name;
     int rollno;
@@ -53,8 +72,8 @@ public:
     {
         cout << "---------------------------------------------------" << endl;
         cout << "Enter student Name : ";
-        //to clear input buffer
-        // cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        // to clear input buffer
+        //  cin.ignore(numeric_limits<streamsize>::max(), '\n');
         getline(cin, Stu_name);
         cout << "Enter Student Roll no : ";
         cin >> rollno;
@@ -128,7 +147,7 @@ int main()
 {
     system("cls");
     bool done = false;
-    bool found =false;
+    bool found = false;
     int studentTop = -1, teacherTop = -1;
     Student s[MAX];
     Teacher t1[MAX];
@@ -143,6 +162,7 @@ int main()
         cout << "3. courses " << endl;
         cout << "4. Quit\n>> ";
         cin >> choice;
+        validUserInput();
         switch (choice)
         {
         case 1:
@@ -226,7 +246,7 @@ int main()
                         cout << "NOT FOUND IN RECORD" << endl;
                     break;
                 case 6:
-                    cout << "View result of all" <<endl;
+                    cout << "View result of all" << endl;
                     break;
                 default:
                     break;
