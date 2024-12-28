@@ -1,26 +1,11 @@
 #include <iostream>
 #include <limits>
 #include <string>
+#include "students.h"
+#include "Teachers.h"
+#include "Utility.h"
 #define MAX 5
 using namespace std;
-
-bool validUserInput()
-{
-    while (true)
-    {
-        if (cin.fail())
-        {
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(),'\n');
-            cout<<"Please enter valid input \n";
-        }
-        else
-        {
-            break;
-            return true;
-        }  
-    }
-}
 
 int i;
 // courses class
@@ -41,8 +26,10 @@ public:
         cin >> id;
         cout << "Enter maximum marks : ";
         cin >> max_marks;
+        validUserInput();
         cout << "Enter Course duration(Hrs) : ";
         cin >> duration;
+        validUserInput();
         cout << "---------------------------------------------------------" << endl;
     }
     // View course details
@@ -56,93 +43,8 @@ public:
         cout << "-------------------------------------------------------" << endl;
     }
 };
-// class student
-class Student
-{
-    long long int contactNo;
-    string address;
-    string Mother_name;
-    string Father_name;
 
-public:
-    string Stu_name;
-    int rollno;
-    // TO get student details and update them
-    void Student_Detail()
-    {
-        cout << "---------------------------------------------------" << endl;
-        cout << "Enter student Name : ";
-        // to clear input buffer
-        //  cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        getline(cin, Stu_name);
-        cout << "Enter Student Roll no : ";
-        cin >> rollno;
-        cout << "Enter student contact : ";
-        cin >> contactNo;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Enter Fathers name : ";
-        getline(cin, Father_name);
-        cout << "Enter Mothers name : ";
-        getline(cin, Mother_name);
-        cout << "Enter Address : ";
-        getline(cin, address);
-        cout << "---------------------------------------------------" << endl;
-    }
-    // To View student detail
-    void show_student_detail()
-    {
-        cout << "---------------------------------------------------------" << endl;
-        cout << "\nName : " << Stu_name;
-        cout << "\nName : " << rollno;
-        cout << "\nConatct : " << contactNo;
-        cout << "\nFather Name : " << Father_name;
-        cout << "\nMother Name : " << Mother_name;
-        cout << "\nAddress : " << address;
-        cout << "\n--------------------------------------------------------" << endl;
-    }
-};
-// Class Teacher
-class Teacher
-{
-    long long int contactNo;
-    string address;
-    string Mother_name;
-    string Father_name;
 
-public:
-    int id;
-    string Teach_name;
-    void teacher_Detail()
-    {
-        cin.ignore();
-        cout << "------------------------------------------------------" << endl;
-        cout << "Enter Teacher Name : ";
-        getline(cin, Teach_name);
-        cout << "Enter ID : ";
-        cin >> id;
-        cout << "Enter teacher contact : ";
-        cin >> contactNo;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Enter Fathers name : ";
-        getline(cin, Father_name);
-        cout << "Enter Mothers name : ";
-        getline(cin, Mother_name);
-        cout << "Enter Address : ";
-        getline(cin, address);
-        cout << "------------------------------------------------------" << endl;
-    }
-    void show_teacher_detail()
-    {
-        cout << "----------------------------------------------------------" << endl;
-        cout << "\nName : " << Teach_name;
-        cout << "\nName : " << id;
-        cout << "\nConatct : " << contactNo;
-        cout << "\nMother Name : " << Mother_name;
-        cout << "\nFather Name : " << Father_name;
-        cout << "\nAddress : " << address;
-        cout << "\n----------------------------------------------------------" << endl;
-    }
-};
 int main()
 {
     system("cls");
