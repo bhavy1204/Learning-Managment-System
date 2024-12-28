@@ -67,6 +67,7 @@ int main()
         validUserInput();
         switch (choice)
         {
+        //Student menu from main menu
         case 1:
             // Menu for operation on students
             int sub_choice;
@@ -155,7 +156,7 @@ int main()
                 }
             } while (sub_choice != 7);
             break;
-
+        //Teachers Menu from main menu
         case 2:
             do
             {
@@ -177,11 +178,20 @@ int main()
                     int id;
                     cout << "Enter teacher id : ";
                     cin >> id;
+                    found=false;
+                    cin.ignore();
                     for (i = 0; i <= teacherTop; i++)
                     {
-                        if (id == t1[i].id)
-                            t1[i].show_teacher_detail();
+                        if (id == t1[i].id){
+                            t1[i].teacher_Detail();
+                            cout<<"Updated successfulyy.."<<endl;
+                            found =true;
+                        }
                     }
+                    if (found==false)
+                        /* code */
+                    }
+                    
                     break;
                 }
                 case 2:
@@ -197,15 +207,36 @@ int main()
                     else
                         t1[++teacherTop].teacher_Detail();
                     break;
+                case 4:
+                {
+                    if (teacherTop == -1)
+                        cout << "NO teacher to show " << endl;
+                    int id;
+                    cout << "Enter teacher id : ";
+                    cin >> id;
+                    for (i = 0; i <= teacherTop; i++)
+                    {
+                        if (id == t1[i].id)
+                            t1[i].show_teacher_detail();
+                    }
+                    break;
+                }
                 default:
                     break;
                 }
             } while (sub_choice != 5);
             break;
+        //Courses Menu from main menu
         case 3:
             /* courses menu */
             break;
+        //Exit message
+        case 4:
+            cout<<"Exiting... Thank you"<<endl;
+            break;
+        //If user enter invalid "Digit"
         default:
+            cout<<"Please enter a valid choice \n";
             break;
         }
     } while (choice != 4);
