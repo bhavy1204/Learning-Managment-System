@@ -44,7 +44,6 @@ public:
     }
 };
 
-
 int main()
 {
     system("cls");
@@ -67,7 +66,7 @@ int main()
         validUserInput();
         switch (choice)
         {
-        //Student menu from main menu
+        // Student menu from main menu
         case 1:
             // Menu for operation on students
             int sub_choice;
@@ -156,7 +155,7 @@ int main()
                 }
             } while (sub_choice != 7);
             break;
-        //Teachers Menu from main menu
+        // Teachers Menu from main menu
         case 2:
             do
             {
@@ -178,20 +177,11 @@ int main()
                     int id;
                     cout << "Enter teacher id : ";
                     cin >> id;
-                    found=false;
-                    cin.ignore();
                     for (i = 0; i <= teacherTop; i++)
                     {
-                        if (id == t1[i].id){
-                            t1[i].teacher_Detail();
-                            cout<<"Updated successfulyy.."<<endl;
-                            found =true;
-                        }
+                        if (id == t1[i].id)
+                            t1[i].show_teacher_detail();
                     }
-                    if (found==false)
-                        /* code */
-                    }
-                    
                     break;
                 }
                 case 2:
@@ -208,35 +198,41 @@ int main()
                         t1[++teacherTop].teacher_Detail();
                     break;
                 case 4:
-                {
                     if (teacherTop == -1)
-                        cout << "NO teacher to show " << endl;
+                        cout << "No teacher present" << endl;
                     int id;
-                    cout << "Enter teacher id : ";
+                    cout << "Enter Teacher id : ";
                     cin >> id;
+                    found = false;
+                    cin.ignore();
                     for (i = 0; i <= teacherTop; i++)
                     {
                         if (id == t1[i].id)
-                            t1[i].show_teacher_detail();
+                        {
+                            t1[i].teacher_Detail();
+                            cout << "Updated Successfully..." << endl;
+                            found = true;
+                        }
                     }
+                    if (found == false)
+                        cout << "Invalid teacher ID" << endl;
                     break;
-                }
                 default:
                     break;
                 }
             } while (sub_choice != 5);
             break;
-        //Courses Menu from main menu
+        // Courses Menu from main menu
         case 3:
             /* courses menu */
             break;
-        //Exit message
+        // Exit message
         case 4:
-            cout<<"Exiting... Thank you"<<endl;
+            cout << "Exiting... Thank you" << endl;
             break;
-        //If user enter invalid "Digit"
+        // If user enter invalid "Digit"
         default:
-            cout<<"Please enter a valid choice \n";
+            cout << "Please enter a valid choice \n";
             break;
         }
     } while (choice != 4);
