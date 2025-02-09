@@ -70,7 +70,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 For questions, suggestions, or feedback, feel free to reach out:
 
-- **Email:** [bhavy1204@example.com](mailto:bhavy1204@example.com)
+- **Email:** [bhavysarwa51@gmail.com](mailto:bhavy1204@example.com)
 - **GitHub Issues:** [https://github.com/bhavy1204/Learning-Managment-System/issues](https://github.com/bhavy1204/Learning-Managment-System/issues)
 
 ---
