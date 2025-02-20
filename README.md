@@ -1,7 +1,7 @@
 ![C++](https://img.shields.io/badge/C++-17-blue.svg) ![Status](https://img.shields.io/badge/Status-Under%20Development-yellow)
 # Learning Management System (LMS)
 
-Welcome to the Learning Management System (LMS) – your one-stop solution for organizing and managing educational courses and student data. Currently under active development, our LMS aims to streamline the learning experience for both students and educators.
+Welcome to the "Learning Management System (LMS)" – your one-stop solution for organizing and managing educational courses and student data. Currently under active development, our LMS aims to streamline the learning experience for both students and educators.
 
 ## Features
 
