@@ -10,7 +10,7 @@ class Student
     string address;
     string Mother_name;
     string Father_name;
-
+//this are the public variable see if you can make them private and still get same results 
 public:
     string Stu_name;
     int rollno;
